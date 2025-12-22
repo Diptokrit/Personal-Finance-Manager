@@ -1,5 +1,4 @@
-def main():
-    print("Personal Finance Manager - Coming Soon!")
+from expense import Expense
 
-if __name__ == "__main__":
-    main()
+e1 = Expense(150, "Food", "2024-01-15", "Lunch")
+print(e1)
