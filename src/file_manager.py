@@ -10,7 +10,7 @@ DATA_FILE = "data/expenses.csv"
 
 def ensure_data_file():
     #make sure that the csv file exists before opening it 
-    if not os.path.exists( DATA_FILE):
+    if not os.path.exists(DATA_FILE):
         with open(DATA_FILE, "w" , newline="") as f:
             writer = csv.writer(f)
             writer.writerow(["Date", "Category", "Amount", "Description"])
