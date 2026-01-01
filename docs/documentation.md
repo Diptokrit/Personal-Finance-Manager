@@ -27,3 +27,12 @@ The Personal Finance Manager is a command-line Python application that helps use
 - Run the program from the project root
 - Check that `expenses.csv` exists inside the `data` folder
 
+- ## Screenshots
+
+### Application Menu
+![Menu Screenshot](screenshot/menu.png)
+
+### Expense Report Output
+![Report Screenshot](screenshot/report.png)
+
+
