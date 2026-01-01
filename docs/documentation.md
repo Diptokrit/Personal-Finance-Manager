@@ -22,7 +22,7 @@ The Personal Finance Manager is a command-line Python application that helps use
 - `reports.py` :contains logic for calculating totals and summaries
 - `utils.py` :contains helper functions
 
-- # Personal Finance Manager
+# Personal Finance Manager
 
 A Python-based command-line Personal Finance Manager that helps users track expenses, store data persistently, and generate summary reports. The project is built using object-oriented design principles and CSV-based file handling.
 
