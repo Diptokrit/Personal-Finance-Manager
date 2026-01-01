@@ -1,49 +1,51 @@
 import csv
-# to read and write csvs
 import os
-#Used to check whether a file exists or not 
 from expense import Expense
 
-DATA_FILE = "data/expenses.csv"
-#storing the file path
-# here the expenses will be stored
+#To give the path to the python directly
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_FILE = os.path.join(BASE_DIR, "data", "expenses.csv")
+
 
 def ensure_data_file():
-    #make sure that the csv file exists before opening it 
+    data_dir = os.path.dirname(DATA_FILE)
+
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+#if no such files it will create one
     if not os.path.exists(DATA_FILE):
-        with open(DATA_FILE, "w" , newline="") as f:
+        with open(DATA_FILE, "w", newline="") as f:
             writer = csv.writer(f)
             writer.writerow(["Date", "Category", "Amount", "Description"])
 
 
-
 def load_expenses():
-
-    # load all the expenses from the csv file and return a list of expenses objects.
-
     ensure_data_file()
+    #To keep the previous expenses in the list
     expenses = []
 
-    with open(DATA_FILE , "r") as f:
+    with open(DATA_FILE, "r") as f:
         reader = csv.reader(f)
-        next(reader) #skip header
+
+        try:
+            next(reader)  # skipping the header
+        except StopIteration:
+            return []
 
         for row in reader:
             if row:
-                expense = Expense.from_row(row)
-                expenses.append(expense)
+                expenses.append(Expense.from_row(row))
+
     return expenses
 
-def save_expenses(expenses):
-    """Save a list of expense to the csv file"""
 
+
+def save_expenses(expenses):
     ensure_data_file()
 
     with open(DATA_FILE, "w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["Date", "Category" , "Amount", "Description"])
+        writer.writerow(["Date", "Category", "Amount", "Description"])
 
         for expense in expenses:
             writer.writerow(expense.to_row())
-
-
