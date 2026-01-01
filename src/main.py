@@ -1,4 +1,3 @@
-from expense import Expense
- 
-e1 = Expense(150, "Food", "2024-01-15", "Lunch")
-print(e1)
+from menu import menu_loop
+
+menu_loop()
