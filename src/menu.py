@@ -23,7 +23,7 @@ def add_expense():
     expenses.append(expense)
     save_expenses(expenses)
 
-    print("✅ Expense added successfully!")
+    print(" Expense added successfully!")
 
 
 def view_expenses():
@@ -50,7 +50,7 @@ def menu_loop():
             print("Exiting... Goodbye!")
             break
         else:
-            print("❌ Invalid choice. Please try again.")
+            print(" Invalid choice. Please try again.")
 
 
 # TEMPORARY (for testing only)
