@@ -8,7 +8,6 @@ class Expense:
         self.category = category
         self.date = date
         self.description = description
-
     #dunder method or the magic method
     def __str__(self):
        return f" Date:{self.date} | Category: {self.category}  Rs: {self.amount:.2f} - {self.description}"
